@@ -1,4 +1,4 @@
-package com.rowen.taco_cloud;
+package com.rowen.taco_cloud.model;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

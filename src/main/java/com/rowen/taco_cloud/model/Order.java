@@ -1,4 +1,4 @@
-package com.rowen.taco_cloud;
+package com.rowen.taco_cloud.model;
 
 import lombok.Data;
 
@@ -8,8 +8,14 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import java.util.Date;
+
 @Data
 public class Order {
+
+    private Long id;
+
+    private Date placedAt;
 
     @NotBlank(message = "Name is required")
     private String name;

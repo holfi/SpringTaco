@@ -1,4 +1,4 @@
-package com.rowen.taco_cloud;
+package com.rowen.taco_cloud.web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

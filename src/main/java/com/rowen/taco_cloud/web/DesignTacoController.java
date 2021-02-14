@@ -1,5 +1,7 @@
-package com.rowen.taco_cloud;
+package com.rowen.taco_cloud.web;
 
+import com.rowen.taco_cloud.model.Ingredient;
+import com.rowen.taco_cloud.model.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
