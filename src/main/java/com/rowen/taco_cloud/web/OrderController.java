@@ -2,7 +2,10 @@ package com.rowen.taco_cloud.web;
 
 import com.rowen.taco_cloud.data.OrderRepository;
 import com.rowen.taco_cloud.model.Order;
+import com.rowen.taco_cloud.model.User;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.weaver.ast.Or;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -33,10 +36,12 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(@Valid Order order, Errors errors, SessionStatus status) {
+    public String processOrder(@Valid Order order, Errors errors, SessionStatus status, @AuthenticationPrincipal User user) {
         if(errors.hasErrors()) {
             return "orderForm";
         }
+
+        order.setUser(user);
 
         orderRepository.save(order);
         status.setComplete();

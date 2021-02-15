@@ -1,6 +1,7 @@
 package com.rowen.taco_cloud.web;
 
 import com.rowen.taco_cloud.data.UserRepository;
+import com.rowen.taco_cloud.security.RegistrationForm;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String processRegistration(RegistraionForm form) {
+    public String processRegistration(RegistrationForm form) {
         userRepository.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
